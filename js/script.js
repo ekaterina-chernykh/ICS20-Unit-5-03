@@ -15,15 +15,16 @@ if (navigator.serviceWorker) {
   })
 }
 
-/**
- * This function displays an alert.
- */
 function myButtonClicked() {
-  // input
-  const height = parseFloat(document.getElementById("height").value)
+  let age = document.getElementById("age").value
 
-  // process
-  const volume = 2
-  // output
-  document.getElementById("volume").innerHTML = "Volume is: " + volume + "mm³"
+  if (age >= 17) {
+    document.getElementById("answer").innerHTML = "G, Pg13 and R"
+  } else if (age >= 13) {
+    document.getElementById("answer").innerHTML = "G and Pg13"
+  } else if (age <= 12) {
+    document.getElementById("answer").innerHTML = "G"
+  } else {
+    document.getElementById("answer").innerHTML = "Error"
+  }
 }
